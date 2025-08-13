@@ -60,7 +60,7 @@ function swing_eq!(du, u, p, t)
     E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr = p        # Input parameters
     δ, Δω = u                                                # δ and Δω
     du[1] = ω_s * Δω                                         # dδ/dt
-    du[2] = (1 / (2*H)) * (P_m - P_e(δ, t) - D*(du[1]/ω_s))  # dΔω/dt
+    du[2] = (1 / (2*H)) * (P_m - P_e(δ, t, E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr) - D*(du[1]/ω_s))  # dΔω/dt
 end
 
 # Define and solve System or Differential Equations
@@ -124,3 +124,4 @@ savefig(fig_f, "Frequency.png")
 println("=========================================================================================")
 println("Solution saved and stored at: ", pwd())
 println("=========================================================================================")
+
