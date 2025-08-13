@@ -57,7 +57,7 @@ end
 
 # Swing equation
 function swing_eq!(du, u, p, t)
-    E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr = p        # Input parameters
+    E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr, ω_s = p   # Input parameters
     δ, Δω = u                                                # δ and Δω
     du[1] = ω_s * Δω                                         # dδ/dt
     du[2] = (1 / (2*H)) * (P_m - P_e(δ, t, E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr) - D*(du[1]/ω_s))  # dΔω/dt
@@ -65,7 +65,7 @@ end
 
 # Define and solve System or Differential Equations
 u0   = [δ0, Δω0]                                                             # Vector of initial condition used to solve the differential equations
-p    = (E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr)                       # Tuple of input parameter used in the P_e function
+p    = (E, V, Vth, Xth, Xpostf, P_init, t_fault, t_cr, ω_s)                       # Tuple of input parameter used in the P_e function
 prob = ODEProblem(swing_eq!, u0, tspan, p)                                   # Define the problem
 sol  = solve(prob, Trapezoid(), reltol=1e-6, abstol=1e-8, saveat=save_times) # Solve the system
 
@@ -124,4 +124,5 @@ savefig(fig_f, "Frequency.png")
 println("=========================================================================================")
 println("Solution saved and stored at: ", pwd())
 println("=========================================================================================")
+
 
