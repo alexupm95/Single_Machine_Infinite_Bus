@@ -7,5 +7,6 @@ To add the necessary packages in Julia, use:
 using Pkg
 Pkg.add("LinearAlgebra")
 Pkg.add("DifferentialEquations")
+Pkg.add("Trapz")
 Pkg.add("Plots")
 Pkg.add("Measures")
