@@ -1,5 +1,5 @@
 # Single_Machine_Infinite_Bus
-This repository contain codes in Julia to solve the Swing Equation for Single Machine Infinite Bus systems.
+This repository contains codes in Julia to solve the Swing Equation for Single Machine Infinite Bus systems.
 
 To add the necessary packages in Julia, use:
 
