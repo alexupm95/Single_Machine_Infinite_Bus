@@ -1,5 +1,14 @@
 cd(dirname(@__FILE__));
 
+#=
+CODE FOR SOLVING THE SWING EQUATION FOR A SINGLE MACHINE CONNECTED TO AN INFINITE BUS
+
+Author:      Alex Junior da Cunha Coelho
+Supervisors: Luis Badesa Bernardo and Araceli Hernandez Bayo
+Affiliation: Technical University of Madrid
+August 2025
+=#
+
 # Load the necessary packages
 using LinearAlgebra
 using DifferentialEquations
@@ -124,5 +133,6 @@ savefig(fig_f, "Frequency.png")
 println("=========================================================================================")
 println("Solution saved and stored at: ", pwd())
 println("=========================================================================================")
+
 
 
